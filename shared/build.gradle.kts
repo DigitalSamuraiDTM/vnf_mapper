@@ -13,7 +13,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             // put your Multiplatform dependencies here
-            implementation(project(":features:logging"))
+            implementation(projects.features.logging)
         }
     }
 }

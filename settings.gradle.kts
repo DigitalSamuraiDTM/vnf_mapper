@@ -15,7 +15,7 @@ dependencyResolutionManagement {
             from(files("gradle/libs.toml"))
         }
     }
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
 
     apply(from = "gradle/repos-extractor.gradle.kts")
     val depsRepos: ((DependencyResolutionManagement) -> Unit) by extra
