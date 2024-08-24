@@ -18,7 +18,7 @@ import vnf_mapper.composeapp.generated.resources.compose_multiplatform
 
 @Composable
 @Preview
-fun App() {
+public fun App() {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {

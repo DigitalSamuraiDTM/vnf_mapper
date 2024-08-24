@@ -1,3 +1,3 @@
 package com.digitalsamura.vmfmapper
 
-const val SERVER_PORT = 8080
+public const val SERVER_PORT: Int = 8080
