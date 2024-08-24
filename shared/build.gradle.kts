@@ -13,12 +13,13 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             // put your Multiplatform dependencies here
+            implementation(project(":features:logging"))
         }
     }
 }
 
 android {
-    namespace = "com.digitalsamura.vmfmapper.shared"
+    namespace = "com.digitalsamurai.vmfmapper.shared"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

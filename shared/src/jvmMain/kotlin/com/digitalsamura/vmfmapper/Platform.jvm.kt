@@ -1,7 +1,7 @@
 package com.digitalsamura.vmfmapper
 
-class JVMPlatform: Platform {
+public class JVMPlatform: Platform {
     override val name: String = "Java ${System.getProperty("java.version")}"
 }
 
-actual fun getPlatform(): Platform = JVMPlatform()
+public actual fun getPlatform(): Platform = JVMPlatform()

@@ -28,6 +28,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(projects.shared)
+            implementation(projects.features.logging)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
