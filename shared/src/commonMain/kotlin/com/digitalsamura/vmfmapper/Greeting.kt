@@ -6,7 +6,7 @@ public class Greeting {
     private val platform = getPlatform()
 
     public fun greet(): String {
-        Logger.d("call greet fun")
+        Logger.i("call greet fun")
         return "Hello, ${platform.name}!"
     }
 }

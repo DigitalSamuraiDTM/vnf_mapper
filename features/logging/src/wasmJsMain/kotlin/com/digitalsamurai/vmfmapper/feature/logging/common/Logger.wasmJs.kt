@@ -2,28 +2,31 @@ package com.digitalsamurai.vmfmapper.feature.logging.common
 
 import kotlinx.browser.document
 
+private const val loadingScript: String =  "var tag = document.createElement(\"script\"); tag.src = \"wasmlogger.js\"; document.getElementsByTagName(\"head\")[0].appendChild(tag);"
 
 internal actual fun errorLog(message: String) {
-//    val a = "console.error(\"${message}\")"
-//    js("awdawd")
+    loadLoggerIfNeed()
+    WasmLogger.e(message)
 }
 
 internal actual fun debugLog(message: String) {
-    WebLogger.i()
-//    js("console.debug(\"${message}\")")
+    loadLoggerIfNeed()
+    WasmLogger.d(message)
 }
 
 internal actual fun warningLog(message: String) {
-//    js("console.warn(\"${message}\")")
+    loadLoggerIfNeed()
+    WasmLogger.w(message)
 }
 
 internal actual fun infoLog(message: String) {
-//    js("console.info(\"${message}\")")
-    WebLogger.i()
+    loadLoggerIfNeed()
+    WasmLogger.i(message)
 }
 
-internal external class WebLogger {
-    companion object {
-        fun i()
-    }
+// TODO: check script loading and load if need it
+private fun loadLoggerIfNeed() {
+    val loggerScript = document.scripts.namedItem("wasmlogger")
 }
+
+
